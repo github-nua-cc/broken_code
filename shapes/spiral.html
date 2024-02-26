@@ -16,6 +16,13 @@
     <link rel="stylesheet" href="../style/shapes.css" />
 
     <!-- ========== JS ========== -->
+    <!-- Math Jax -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"
+    ></script>
     <!-- all pages shared JavaScript -->
     <script src="../js/shared.js" defer></script>
     <!-- p5js -->
@@ -65,15 +72,21 @@
       <div id="shape-info-container">
         <!-- formula of shape -->
         <div class="shape-info-element">
-          Formula:
-          <div class="s-text">r = a * &#952;</div>
-          <div class="s-text">
-            where a is a constant number that determines the scale of the spiral
+          Formula: \(r = a\) \(&theta; \)
+          <div class="s-text shape-info-element">
+            where:
+            <div class="shape-info-element">\( &theta; \in [0..360]\)</div>
+            <div class="shape-info-element">
+              \(a\) is a constant number that determines the scale of the spiral
+            </div>
           </div>
         </div>
         <!-- shows how much spiral has rotated -->
         <div class="shape-info-element">
-          Spiral Rotated By: <span class="s-text"><span id="spiral-rotation-value">0</span> degrees</span>
+          Spiral Rotated By:
+          <span class="s-text shape-info-element"
+            ><span id="spiral-rotation-value">0</span> degrees</span
+          >
         </div>
         <!-- allows user to change spiral color -->
         <div clas="shape-info-element">

@@ -14,6 +14,13 @@
     <link rel="stylesheet" href="../style/shapes.css" />
 
     <!-- ========== JS ========== -->
+    <!-- Math Jax -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"
+    ></script>
     <!-- all pages shared JavaScript -->
     <script src="../js/shared.js" defer></script>
     <!-- p5js -->
@@ -61,14 +68,22 @@
         <!-- formula of shape -->
         <div class="shape-info-element">
           Formula:
-          <div class="s-text">
-            r = 2 - 2 * sin( &#952;) + sin( &#952;) * sqrt(abs(cos( &#952;))) /
-            (sin( &#952;) + 1.4);
+          <div class="shape-info-element">
+            \(r = o\) \({2 - 2 sin( &#952;) + sin( &#952;) \sqrt {\left\lvert
+            cos( &#952; )\right \rvert} \over sin( &#952;) + 1.4}\)
+          </div>
+          <div class="s-text shape-info-element">
+            Where:
+            <div class="shape-info-element">\( &theta; \in [0..360]\)</div>
+            <div class="shape-info-element">\( o \) is an offset factor</div>
           </div>
         </div>
 
         <div class="shape-info-element">
-          Heart Offsetted By: <span class="s-text"><span id="heart-offset-value">0</span> pixels</span>
+          Heart Offsetted By:
+          <span class="s-text"
+            ><span id="heart-offset-value">0</span> pixels</span
+          >
         </div>
 
         <!-- allows user to change heart color -->
@@ -76,10 +91,12 @@
           <button id="new-color-button">New Color</button>
         </div>
 
-
         <div class="shape-info-container s-text">
           More fun heart formulas can be found in
-          <a class="link" target="_blank" href="https://mathworld.wolfram.com/HeartCurve.html"
+          <a
+            class="link"
+            target="_blank"
+            href="https://mathworld.wolfram.com/HeartCurve.html"
             >Wolfram Alpha</a
           >
         </div>

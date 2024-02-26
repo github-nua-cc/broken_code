@@ -14,6 +14,13 @@
     <link rel="stylesheet" href="../style/shapes.css" />
 
     <!-- ========== JS ========== -->
+    <!-- Math Jax -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"
+    ></script>
     <!-- all pages shared JavaScript -->
     <script src="../js/shared.js" defer></script>
     <!-- p5js -->
@@ -58,13 +65,21 @@
       <div id="shape-info-container">
         <!-- formula of shape -->
         <div class="shape-info-element">
-          Outline Formula: <span class="s-text"> r = sin(nθ)</span>
+          Outline Formula: \( r = sin(n\) \(θ) \)
+          <div class="s-text shape-info-element">
+            where:
+            <div class="shape-info-element">\( &theta; \in [0..360]\)</div>
+            <div class="shape-info-element">\( n \) is a natural number</div>
+          </div>
         </div>
         <div class="shape-info-element">
           Points of lines located at:
-          <div class="s-text">
-            (sin(index * n * d), index * d) <br />
-            with index &isin; (0...360)
+          <div class="s-text shape-info-element">
+            \( ( sin(i\) \(n\) \(d), i\) \(d )\)
+          </div>
+          <div class="s-text shape-info-element">
+            where \(i\) is a number that keeps increasing with step \(1\), 
+            \( i &isin; &#8469; \) and \( i &isin; [0..360] \)
           </div>
         </div>
         <!-- allows user to change circle color -->
@@ -72,18 +87,18 @@
           <button id="new-color-button">New Outline Color</button>
         </div>
         <div class="shape-info-element">
-          Value of n:
+          Value of \(n\):
           <input id="rose-n-slider" type="range" min="0" max="20" />
           <input id="rose-n-value" type="number" min="0" max="20" />
           <div class="s-text">
-            The rose has n petals if n is odd, and 2n petals if n is even
+            The rose has \(n\) petals if \(n\) is odd, and \(2n\) petals if \(n\) is even
           </div>
         </div>
         <div class="shape-info-element">
           Value of d:
           <input id="rose-d-slider" type="range" min="0" max="360" />
           <input id="rose-d-value" type="number" min="0" max="360" />
-          <div class="s-text">degree # at which the lines turn</div>
+          <div class="s-text">angle in degrees at which the lines turn</div>
         </div>
         <div class="shape-info-element s-text">
           In
@@ -93,7 +108,7 @@
             href="https://en.wikipedia.org/wiki/Maurer_rose"
             >this wikipedia article</a
           >
-          you can find inspiration interesting n's and d's to try.
+          you can find inspiration interesting \(n\)'s and \(d\)'s to try.
         </div>
       </div>
     </main>
