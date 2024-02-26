@@ -18,13 +18,11 @@ function mustDraw() {
 
   //n has changed must draw
   if(n != newN) {
-    n = newN;
     return true;
   }
 
   //d has changed must draw
   if(d != newD) {
-    d = newD;
     return true;
   }
 
@@ -69,13 +67,14 @@ let walkerCoordinatesArray = [];
 
 function updateWalkerArray() {
   d = newD;
+  n = newN;
 
   walkerCoordinatesArray = [];
 
   for (let index = 0; index < 361; index++) {
-    const angle = (index * d) % 360;
-    const radius = 200 * sin(n * angle);
-    const cartesianCoordinates = polarToCartesian(radius, angle);
+    const k = index * d;
+    const radius = 200 * sin(n * k);
+    const cartesianCoordinates = polarToCartesian(radius, k);
     walkerCoordinatesArray.push({
       x: cartesianCoordinates.x,
       y: cartesianCoordinates.y,
@@ -93,6 +92,7 @@ function drawRose() {
 
   //reset background and stroke
   noStroke();
+  fill(randomColor);
 
   //draw rose
   for (let theta = 0; theta < 360; theta += 0.1) {
@@ -105,8 +105,9 @@ function drawRose() {
 
   //draw lines in white
   stroke(color(255, 255, 255));
+  noFill();
 
-  beginShape(LINES);
+  beginShape();
   for (point of walkerCoordinatesArray) {
     vertex(point.x, point.y);
   }
