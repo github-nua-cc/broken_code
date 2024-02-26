@@ -42,12 +42,12 @@ dSliderElement.value = d;
 dValueElement.value = d;
 
 dSliderElement.oninput = (event) => {
-  newD = event.target.value;
-  dValueElement.value = event.target.value;
+  newD = event.target.value * 0.01;
+  dValueElement.value = (event.target.value * 0.01).toFixed(2);
 };
 dValueElement.onchange = (event) => {
   newD = event.target.value;
-  dSliderElement.value = event.target.value;
+  dSliderElement.value = event.target.value * 100;
 }
 
 const nSliderElement = document.getElementById("rose-n-slider");
@@ -56,12 +56,12 @@ nSliderElement.value = n;
 nValueElement.value = n;
 
 nSliderElement.oninput = (event) => {
-  newN = event.target.value;
-  nValueElement.value = event.target.value;
+  newN = event.target.value * 0.01;
+  nValueElement.value = (event.target.value * 0.01).toFixed(2);
 };
 nValueElement.onchange = (event) => {
   newN = event.target.value;
-  nSliderElement.value = event.target.value;
+  nSliderElement.value = event.target.value * 100;
 }
 
 //walkerArray
@@ -95,7 +95,7 @@ function drawRose() {
   noStroke();
 
   //draw rose
-  for (let theta = 0; theta < 360; theta += 0.01) {
+  for (let theta = 0; theta < 360; theta += 0.1) {
     const radius = 200 * sin(n * theta);
 
     const cartesianCoordinates = polarToCartesian(radius, theta);
