@@ -11,23 +11,23 @@ let first = true;
 
 function mustDraw() {
   //first iteration must draw
-  if(first) {
+  if (first) {
     first = false;
     return true;
   }
 
   //n has changed must draw
-  if(n != newN) {
+  if (n != newN) {
     return true;
   }
 
   //d has changed must draw
-  if(d != newD) {
+  if (d != newD) {
     return true;
   }
 
   //if color changes must redraw
-  if(colorHasChanged) {
+  if (colorHasChanged) {
     return true;
   }
 
@@ -46,7 +46,7 @@ dSliderElement.oninput = (event) => {
 dValueElement.onchange = (event) => {
   newD = event.target.value;
   dSliderElement.value = event.target.value * 100;
-}
+};
 
 const nSliderElement = document.getElementById("rose-n-slider");
 const nValueElement = document.getElementById("rose-n-value");
@@ -60,7 +60,7 @@ nSliderElement.oninput = (event) => {
 nValueElement.onchange = (event) => {
   newN = event.target.value;
   nSliderElement.value = event.target.value * 100;
-}
+};
 
 //walkerArray
 let walkerCoordinatesArray = [];
@@ -73,7 +73,7 @@ function updateWalkerArray() {
 
   for (let index = 0; index < 361; index++) {
     const k = index * d;
-    const radius = 200 * sin(n * k);
+    const radius = 300 * sin(n * k);
     const cartesianCoordinates = polarToCartesian(radius, k);
     walkerCoordinatesArray.push({
       x: cartesianCoordinates.x,
@@ -83,8 +83,7 @@ function updateWalkerArray() {
 }
 
 function drawRose() {
-
-  if(!mustDraw()) return;
+  if (!mustDraw()) return;
 
   background(0);
 
@@ -95,8 +94,8 @@ function drawRose() {
   fill(randomColor);
 
   //draw rose
-  for (let theta = 0; theta < 360; theta += 0.1) {
-    const radius = 200 * sin(n * theta);
+  for (let theta = 0; theta < 360; theta += 0.07) {
+    const radius = 300 * sin(n * theta);
 
     const cartesianCoordinates = polarToCartesian(radius, theta);
 
