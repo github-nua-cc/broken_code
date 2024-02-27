@@ -103,7 +103,7 @@ function drawRose() {
   }
 
   //draw lines in white
-  stroke(color(255, 255, 255, 100));
+  stroke(color(200, 200, 200, 200));
   noFill();
 
   beginShape();
