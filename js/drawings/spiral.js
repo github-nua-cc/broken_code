@@ -25,8 +25,8 @@ function drawSpiral() {
 
   //go through all the possible angles with a changing increment and draw a point with changing radius
   // let increment = 5;
-  beginShape();
-  for (let theta = 0; theta < 10 * 360; theta = theta + 0.1) {
+  beginShape(POINTS);
+  for (let theta = 0; theta < 10 * 360; theta = theta + 1) {
     //calclulate a new radius bigger than the one before
     const radius = 0.4 * theta;
 
