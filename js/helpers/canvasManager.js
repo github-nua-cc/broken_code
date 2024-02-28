@@ -25,7 +25,7 @@ function generateRandomColor(alpha = 255) {
   //return new color
   randomColor = newColor;
 
-  fill(randomColor);
+  stroke(randomColor);
 
   colorHasChanged = true;
 }

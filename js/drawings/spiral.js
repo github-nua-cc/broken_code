@@ -24,8 +24,9 @@ function drawSpiral() {
   background(0, 30);
 
   //go through all the possible angles with a changing increment and draw a point with changing radius
-  let increment = 5;
-  for (let theta = 0; theta < 5 * 360; theta = theta + increment) {
+  // let increment = 5;
+  beginShape();
+  for (let theta = 0; theta < 10 * 360; theta = theta + 0.1) {
     //calclulate a new radius bigger than the one before
     const radius = 0.4 * theta;
 
@@ -44,13 +45,14 @@ function drawSpiral() {
     );
 
     //draw a point at these coordinates
-    circle(cartesianCoordinates.x, cartesianCoordinates.y, 16);
+    vertex(cartesianCoordinates.x, cartesianCoordinates.y);
 
-    if (theta % 360 === 0) {
-      // update increment
-      increment = increment * 0.2;
-    }
+    // if (theta % 360 === 0) {
+    //   // update increment
+    //   increment = increment * 0.2;
+    // }
   }
+  endShape();
 
   // update offset and delta increment if necessary
   const increaseBy = 0.1;

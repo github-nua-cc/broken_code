@@ -7,12 +7,16 @@ function drawCircle() {
   // define stroke
   const circleStroke = 20;
 
+  beginShape();
+
   //go through all the possible angles with an increment of 0.5 and draw a point with the same radius
   for (let theta = 0; theta < 360; theta = theta + 0.5) {
     //get html coordinates for that point
     const cartesianCoordinates = polarToCartesian(circleRadius, theta);
 
     //draw a point in those coordinates
-    circle(cartesianCoordinates.x, cartesianCoordinates.y, circleStroke);
+    vertex(cartesianCoordinates.x, cartesianCoordinates.y);
   }
+
+  endShape();
 }

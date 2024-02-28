@@ -90,25 +90,28 @@ function drawRose() {
   updateWalkerArray();
 
   //reset background and stroke
-  noStroke();
-  fill(randomColor);
+  stroke(randomColor);
 
   //draw rose
+  beginShape();
   for (let theta = 0; theta < 360; theta += 0.07) {
     const radius = 300 * sin(n * theta);
 
     const cartesianCoordinates = polarToCartesian(radius, theta);
 
-    circle(cartesianCoordinates.x, cartesianCoordinates.y, 8);
+    vertex(cartesianCoordinates.x, cartesianCoordinates.y);
   }
+  endShape();
 
   //draw lines in white
+  push();
   stroke(color(200, 200, 200, 200));
-  noFill();
+  strokeWeight(2);
 
   beginShape();
   for (point of walkerCoordinatesArray) {
     vertex(point.x, point.y);
   }
   endShape();
+  pop();
 }

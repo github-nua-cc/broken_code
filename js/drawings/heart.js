@@ -28,6 +28,9 @@ function drawHeart() {
   const heartThickness = 4;
   const maximumHeartScale = 100;
 
+
+  beginShape();
+
   //loop - only one circle
   for (let theta = 0; theta < 360; theta = theta + 0.1) {
     //get radius of this theta
@@ -37,8 +40,10 @@ function drawHeart() {
     const cartesianCoordinates = polarToCartesian(radius, theta);
 
     //draw a point at these coordinates
-    circle(cartesianCoordinates.x, cartesianCoordinates.y, heartThickness);
+    vertex(cartesianCoordinates.x, cartesianCoordinates.y);
   }
+
+  endShape();
 
   //update heart scale
   heartOffset = heartOffset + 0.1;

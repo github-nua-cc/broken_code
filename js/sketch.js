@@ -10,16 +10,14 @@ function setup() {
   background(0);
 
   //remove stroke
-  noStroke();
+  noFill();
+  strokeWeight(10);
 
   //set angle mode to degrees
   angleMode(DEGREES);
 
   //set a random color to be the fill
   generateRandomColor();
-
-  //fill with random color
-  fill(randomColor);
 }
 
 function draw() {
