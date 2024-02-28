@@ -55,10 +55,10 @@ function drawSpiral() {
   endShape();
 
   // update offset and delta increment if necessary
-  const increaseBy = 0.1;
-  if (deltaIncrement > 0) deltaIncrement -= increaseBy;
-  if (deltaIncrement < 0) deltaIncrement += increaseBy;
-  if (abs(deltaIncrement) <= increaseBy) deltaIncrement = 0;
+  const decreaseBy = 0.99;
+  const epsilon = 0.1;
+  deltaIncrement = deltaIncrement * decreaseBy;
+  if (abs(deltaIncrement) <= epsilon) deltaIncrement = 0;
   spiralOffset = spiralOffset + deltaIncrement;
 
   //update html info

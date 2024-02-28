@@ -11,7 +11,7 @@ function setup() {
 
   //remove stroke
   noFill();
-  strokeWeight(10);
+  strokeWeight(20);
 
   //set angle mode to degrees
   angleMode(DEGREES);
