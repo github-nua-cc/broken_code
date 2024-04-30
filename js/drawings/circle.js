@@ -4,8 +4,6 @@
 function drawCircle() {
   // define radius
   const circleRadius = 200;
-  // define stroke
-  const circleStroke = 20;
 
   beginShape();
 

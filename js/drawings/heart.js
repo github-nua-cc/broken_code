@@ -49,7 +49,7 @@ function drawHeart() {
   //update heart scale
   heartOffset = heartOffset + 0.5;
   //check heart scale has not gone beyond maximum
-  if (heartOffset > maximumHeartScale) {
+  if (heartOffset > maximumHeartsScale) {
     heartOffset = 0;
     background(0);
   }

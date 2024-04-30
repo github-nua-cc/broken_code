@@ -53,15 +53,6 @@ const nValueElement = document.getElementById("rose-n-value");
 nSliderElement.value = n;
 nValueElement.value = n;
 
-nSliderElement.oninput = (event) => {
-  newN = event.target.value * 0.01;
-  nValueElement.value = (event.target.value * 0.01).toFixed(2);
-};
-nValueElement.onchange = (event) => {
-  newN = event.target.value;
-  nSliderElement.value = event.target.value * 100;
-};
-
 //walkerArray
 let walkerCoordinatesArray = [];
 
