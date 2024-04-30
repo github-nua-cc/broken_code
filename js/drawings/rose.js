@@ -34,11 +34,14 @@ function mustDraw() {
   return false;
 }
 
+//=========== SETUP D SLIDER =============
+//elements
 const dSliderElement = document.getElementById("rose-d-slider");
 const dValueElement = document.getElementById("rose-d-value");
 dSliderElement.value = d;
 dValueElement.value = d;
 
+//listeners
 dSliderElement.oninput = (event) => {
   newD = event.target.value * 0.01;
   dValueElement.value = (event.target.value * 0.01).toFixed(2);
@@ -48,11 +51,14 @@ dValueElement.onchange = (event) => {
   dSliderElement.value = event.target.value * 100;
 };
 
+//=========== SETUP N SLIDER =============
+//elements
 const nSliderElement = document.getElementById("rose-n-slider");
 const nValueElement = document.getElementById("rose-n-value");
 nSliderElement.value = n;
 nValueElement.value = n;
 
+//============ WALKER ==========
 //walkerArray
 let walkerCoordinatesArray = [];
 
